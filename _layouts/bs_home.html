@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+        <div class="hero-unit">
+            <img src="logo.png" alt>
+            {{ content }}
+        </div>
+
+        <div id="imgCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                {% for item in page.images %}
+                <li data-target="#imgCarousel"
+                    data-slide-to="{{ forloop.index0 }}"
+                    {% if forloop.index0 == 0 %} class="active" {% endif %}
+                    ></li>
+                {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+                {% for item in page.images %}
+                <div class="item{% if forloop.index0 == 0 %} active{% endif %}">
+                    <img src="{{ item.img }}" alt>
+                    {% if item.title or item.caption %}
+                    <div class="carousel-caption">
+                        {% if item.title %}
+                            <h4>{{ item.title }}</h4>
+                        {% endif %}
+                        {% if item.caption %}
+                        <p>
+                            {{ item.caption }}
+                        </p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <a class="left carousel-control" href="#imgCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#imgCarousel" data-slide="next">›</a>
+        </div>
+
+
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-carousel.min.js"></script>
+  </body>
+</html>
