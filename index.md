@@ -15,4 +15,6 @@ images:
 - img: full/tina_turner_zoomin.JPG
 ---
 
-If you are interested in any of the pieces or want to get a quote on a design, please contact <info@wallfishbeads.com>.
+All pieces shown are available for sale as is or customized.   Please contact <info@wallfishbeads.com> if you are interested in a price quote or a custom design.  
+
+Visit and "like" us on Facebook at [WallFish Beads](www.facebook.com/wallfishbeads) for the latest designs and updates.
